@@ -1,0 +1,109 @@
+/**
+ * @file resistor-training.css
+ * @author Stefan Wilhelm
+ * @origin github.com/stfwi/
+ * @license MIT
+ */
+#resistor-training {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 500px;
+  margin: 0px;
+  padding: 0px 0px 10px 0px;
+  border: solid 1px #aaaaaa;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#resistor-training .resistor-training-resistor {
+  position: absolute;
+  visibility: hidden;
+  display: block;
+  width: 90%;
+  left: 5%;
+  top: 20px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+#resistor-training-images {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 120px;
+}
+
+#resistor-training-text {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 150px;
+}
+
+#resistor-training-input {
+  position: relative;
+  display: inline-block;
+  background-color: #eeeeee;
+  border: solid 1px #444444;
+  font-size: 20px;
+  text-align: center;
+  color: #222222;
+  height: 28px;
+  margin: 20px;
+  width: 50%;
+  max-width: 180px;
+  user-select: auto;
+}
+
+#resistor-training-output {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  color: #777777;
+  text-align: center;
+  height: 32px;
+  width: 100%;
+  user-select: contain;
+}
+
+#resistor-training-footer {
+  position: relative;
+  text-align: right;
+  vertical-align: bottom;
+  font-size: 20px;
+  width: 98%;
+  height: 32px;
+}
+
+#resistor-training-cheat-sheet {
+  width: 100%;
+}
+
+#resistor-training-show-cheat-sheet {
+  cursor: help !important;
+}
+
+#resistor-training-output-message .pass { font-size: 20px;  color: green !important; }
+#resistor-training-output-message .fail { font-size: 20px; color: red !important; }
+#resistor-training-output-eseries { color: #777777; font-size: 16px; }
+#resistor-training-output-alternatives { color: #777777; font-size: 16px; }
+#resistor-training-statistics-num-ok { color: #008000 !important; }
+
+#resistor-training, #resistor-training * {
+  font-family: sans-serif;
+  cursor: default;
+  user-select: none;
+}
+
+#resistor-training.dark-theme, #resistor-training.dark-theme * {
+  color: #cccccc;
+}
+
+#resistor-training.dark-theme, #resistor-training.dark-theme #resistor-training-input {
+  background-color: #222222;
+  border: solid 1px #777777;
+}

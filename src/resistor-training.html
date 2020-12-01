@@ -1,0 +1,69 @@
+<!doctype html><html><head>
+  <!--
+    -- @file resistor-training.html
+    -- @author Stefan Wilhelm
+    -- @origin github.com/stfwi/
+    -- @license MIT
+  -->
+  <title>Resistor Trainer</title>
+  <!-- resistor-training-head -->
+  <link rel="stylesheet" type="text/css" href="resistor-training.css"/>
+  <script src="resistor-training.js"></script>
+  <script>window.onload=()=>resistor_trainer({debug:false,delay_ms_on_correct:6000,delay_ms_on_incorrect:6000})</script>
+  <!-- /resistor-training-head -->
+  <style>
+    body, html {
+      position: relative;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      padding: 20px;
+    }
+    #main-content {
+      position: relative;
+      width: 500px;
+      font-family: sans-serif;
+      font-size: 12pt;
+    }
+    #description {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head><body><div id="main-content">
+  <h1>Reading Resistors</h1>
+  Click the book icon to open/close help and cheat sheet.
+  <br/><br/>
+  <!-- resistor-training-body -->
+  <div id="resistor-training" class="no-dark-theme">
+    <div id="nojs-warning">(Please enable JavaScript for this page to use the resistor trainer)</div>
+    <div id="resistor-training-images">
+      <svg id="resistor-training-r5-1" class="resistor-training-resistor" xmlns="http://www.w3.org/2000/svg" width="411" height="81" viewBox="0 0 411 81"><defs><linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="prefix__a"><stop offset="0%" stop-color="#f5f5f5"/><stop offset="100%" stop-color="#b3b3b3"/></linearGradient><linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="prefix__b"><stop offset="0%" stop-color="#e3d7b6"/><stop offset="100%" stop-color="#e0bf5a"/></linearGradient></defs><g pointer-events="all"><rect x="290" y="35" width="120" height="10" rx="1.5" ry="1.5" fill="url(#prefix__a)" stroke="#666"/><rect y="35" width="120" height="10" rx="1.5" ry="1.5" fill="url(#prefix__a)" stroke="#666"/><rect x="130" y="10" width="150" height="60" rx="9" ry="9" fill="url(#prefix__b)" stroke="#665729"/><rect x="110" width="30" height="80" rx="4.5" ry="4.5" fill="url(#prefix__b)" stroke="#665729"/><rect x="270" width="30" height="80" rx="4.5" ry="4.5" fill="url(#prefix__b)" stroke="#665729"/><rect x="150" y="10" width="15" height="60" fill="#0a0001" stroke="#000000" pointer-events="all"/><rect x="170" y="10" width="15" height="60" fill="#0a0002" stroke="#000000" pointer-events="all"/><rect x="190" y="10" width="15" height="60" fill="#0a0003" stroke="#000000" pointer-events="all"/><rect x="210" y="10" width="15" height="60" fill="#0a0004" stroke="#000000" pointer-events="all"/><rect x="245" y="10" width="15" height="60" fill="#0a0005" stroke="#000000" pointer-events="all"/></g></svg>
+      <svg id="resistor-training-r4-1" class="resistor-training-resistor" xmlns="http://www.w3.org/2000/svg" width="411" height="71" viewBox="0 0 411 71"><defs><linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="prefix__a"><stop offset="0%" stop-color="#f5f5f5"/><stop offset="100%" stop-color="#b3b3b3"/></linearGradient><linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="prefix__b"><stop offset="0%" stop-color="#e3d7b6"/><stop offset="100%" stop-color="#e0bf5a"/></linearGradient></defs><g pointer-events="all"><rect y="30" width="410" height="10" rx="1.5" ry="1.5" fill="url(#prefix__a)" stroke="#666"/><rect x="152" y="5" width="108" height="60" rx="4.8" ry="4.8" fill="url(#prefix__b)" stroke="#665729"/><rect x="156" width="24" height="70" rx="3.6" ry="3.6" fill="url(#prefix__b)" stroke="#665729"/><rect x="234" width="23" height="70" rx="3.45" ry="3.45" fill="url(#prefix__b)" stroke="#665729"/><rect x="161" y="0" width="15" height="70" fill="#0a0001" stroke="#000000" pointer-events="all"/><rect x="184" y="5" width="15" height="60" fill="#0a0002" stroke="#000000" pointer-events="all"/><rect x="205" y="5" width="15" height="60" fill="#0a0003" stroke="#000000" pointer-events="all"/><rect x="238" y="0" width="15" height="70" fill="#0a0004" stroke="#000000" pointer-events="all"/></g></svg>
+    </div>
+    <div id="resistor-training-text">
+      R=<input id="resistor-training-input" type="text" placeholder="Enter value here"/>&Omega;
+      <div id="resistor-training-output">
+        <span id="resistor-training-output-message"></span><br/>
+        <span id="resistor-training-output-alternatives"></span><br/>
+        <span id="resistor-training-output-eseries"></span></div>
+    </div>
+    <div id="resistor-training-footer"><a id="resistor-training-show-cheat-sheet" alt="Show cheat sheet">&#x1f56e;</a>  <span>&#9878; <span id="resistor-training-statistics-num-ok" alt="Number of correct answers so far">0</span>/<span id="resistor-training-statistics-num-total" alt="Total number of entered answers">0</span></span></div>
+    <div id="resistor-training-cheat-sheet" style="display:none;">
+      <img src="img/reference-diagram.svg" draggable="false" />
+      <div id="description">
+        <h2>Description</h2>
+        This small trainer helps you memorising the color codes of standard resistors via repetitive entering values for
+        randomly generated resistors. Data are partially generated from E-series, partially with free random data. Accepted
+        formats in the input field are e.g. "100.1K/5%", "100k1 5%", "100100/5", or "100.1e3". There is no "submit" button,
+        press return/enter instead to check your input and generate new data ("Optimised for numpad"). The tolerance input
+        is optional, but if given it has to be correct. With the check result (green=ok, red=incorrect) the correct value
+        is shown - this also contains the E-Series the resistor is contained in, and also commonly used representations of
+        the correct resistor.
+      </div>
+    </div>
+  </div>
+  <!-- /resistor-training-body -->
+</div></body></html>
